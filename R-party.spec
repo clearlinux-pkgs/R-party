@@ -4,7 +4,7 @@
 #
 Name     : R-party
 Version  : 1.3.0
-Release  : 12
+Release  : 13
 URL      : https://cran.r-project.org/src/contrib/party_1.3-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/party_1.3-0.tar.gz
 Summary  : A Laboratory for Recursive Partytioning
@@ -24,7 +24,7 @@ BuildRequires : R-modeltools
 BuildRequires : R-mvtnorm
 BuildRequires : R-sandwich
 BuildRequires : R-zoo
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 The core of the package is ctree(), an implementation of
@@ -58,11 +58,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1524275954
+export SOURCE_DATE_EPOCH=1533750100
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1524275954
+export SOURCE_DATE_EPOCH=1533750100
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
