@@ -4,7 +4,7 @@
 #
 Name     : R-party
 Version  : 1.3.3
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/party_1.3-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/party_1.3-3.tar.gz
 Summary  : A Laboratory for Recursive Partytioning
