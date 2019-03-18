@@ -4,21 +4,14 @@
 #
 Name     : R-party
 Version  : 1.3.3
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/party_1.3-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/party_1.3-3.tar.gz
 Summary  : A Laboratory for Recursive Partytioning
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-party-lib = %{version}-%{release}
-Requires: R-coin
-Requires: R-mlbench
-Requires: R-modeltools
-Requires: R-mvtnorm
-Requires: R-sandwich
-Requires: R-strucchange
-Requires: R-varImp
-Requires: R-zoo
+Requires: R-vcd
 BuildRequires : R-TH.data
 BuildRequires : R-coin
 BuildRequires : R-mlbench
@@ -27,6 +20,7 @@ BuildRequires : R-mvtnorm
 BuildRequires : R-sandwich
 BuildRequires : R-strucchange
 BuildRequires : R-varImp
+BuildRequires : R-vcd
 BuildRequires : R-zoo
 BuildRequires : buildreq-R
 
@@ -62,10 +56,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551890433
+export SOURCE_DATE_EPOCH=1552873642
 
 %install
-export SOURCE_DATE_EPOCH=1551890433
+export SOURCE_DATE_EPOCH=1552873642
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -101,8 +95,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library party|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  party || :
 
 
 %files
@@ -143,7 +136,26 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/party/help/paths.rds
 /usr/lib64/R/library/party/html/00Index.html
 /usr/lib64/R/library/party/html/R.css
-/usr/lib64/R/library/party/libs/symbols.rds
+/usr/lib64/R/library/party/tests/Distributions.R
+/usr/lib64/R/library/party/tests/Distributions.Rout.save
+/usr/lib64/R/library/party/tests/Examples/party-Ex.Rout.save
+/usr/lib64/R/library/party/tests/LinearStatistic-regtest.R
+/usr/lib64/R/library/party/tests/LinearStatistic-regtest.Rout.save
+/usr/lib64/R/library/party/tests/Predict-regtest.R
+/usr/lib64/R/library/party/tests/Predict-regtest.Rout.save
+/usr/lib64/R/library/party/tests/RandomForest-regtest.R
+/usr/lib64/R/library/party/tests/RandomForest-regtest.Rout.save
+/usr/lib64/R/library/party/tests/TestStatistic-regtest.R
+/usr/lib64/R/library/party/tests/TestStatistic-regtest.Rout.save
+/usr/lib64/R/library/party/tests/TreeGrow-regtest.R
+/usr/lib64/R/library/party/tests/TreeGrow-regtest.Rout.save
+/usr/lib64/R/library/party/tests/Utils-regtest.R
+/usr/lib64/R/library/party/tests/Utils-regtest.Rout.save
+/usr/lib64/R/library/party/tests/bugfixes.R
+/usr/lib64/R/library/party/tests/bugfixes.Rout.save
+/usr/lib64/R/library/party/tests/mob.R
+/usr/lib64/R/library/party/tests/mob.Rout.save
+/usr/lib64/R/library/party/tests/t1.RData
 
 %files lib
 %defattr(-,root,root,-)
