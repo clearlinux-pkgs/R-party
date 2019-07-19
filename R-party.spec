@@ -4,13 +4,24 @@
 #
 Name     : R-party
 Version  : 1.3.3
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/party_1.3-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/party_1.3-3.tar.gz
 Summary  : A Laboratory for Recursive Partytioning
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-party-lib = %{version}-%{release}
+Requires: R-coin
+Requires: R-libcoin
+Requires: R-mlbench
+Requires: R-modeltools
+Requires: R-mvtnorm
+Requires: R-randomForest
+Requires: R-sandwich
+Requires: R-strucchange
+Requires: R-varImp
+Requires: R-vcd
+Requires: R-zoo
 BuildRequires : R-TH.data
 BuildRequires : R-coin
 BuildRequires : R-libcoin
@@ -56,13 +67,13 @@ lib components for the R-party package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552880862
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1563495058
 
 %install
-export SOURCE_DATE_EPOCH=1552880862
+export SOURCE_DATE_EPOCH=1563495058
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -91,12 +102,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  party || :
+R CMD check --no-manual --no-examples --no-codoc party || :
 
 
 %files
