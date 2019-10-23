@@ -4,7 +4,7 @@
 #
 Name     : R-party
 Version  : 1.3.3
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/party_1.3-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/party_1.3-3.tar.gz
 Summary  : A Laboratory for Recursive Partytioning
@@ -12,15 +12,10 @@ Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-party-lib = %{version}-%{release}
 Requires: R-coin
-Requires: R-libcoin
-Requires: R-mlbench
 Requires: R-modeltools
 Requires: R-mvtnorm
-Requires: R-randomForest
 Requires: R-sandwich
 Requires: R-strucchange
-Requires: R-varImp
-Requires: R-vcd
 Requires: R-zoo
 BuildRequires : R-TH.data
 BuildRequires : R-coin
@@ -35,6 +30,7 @@ BuildRequires : R-varImp
 BuildRequires : R-vcd
 BuildRequires : R-zoo
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 The core of the package is ctree(), an implementation of
@@ -68,10 +64,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1563495058
+export SOURCE_DATE_EPOCH=1571871580
 
 %install
-export SOURCE_DATE_EPOCH=1563495058
+export SOURCE_DATE_EPOCH=1571871580
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
