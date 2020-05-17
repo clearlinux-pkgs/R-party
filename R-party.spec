@@ -4,7 +4,7 @@
 #
 Name     : R-party
 Version  : 1.3.4
-Release  : 34
+Release  : 35
 URL      : https://cran.r-project.org/src/contrib/party_1.3-4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/party_1.3-4.tar.gz
 Summary  : A Laboratory for Recursive Partytioning
@@ -59,10 +59,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589401521
+export SOURCE_DATE_EPOCH=1589750995
 
 %install
-export SOURCE_DATE_EPOCH=1589401521
+export SOURCE_DATE_EPOCH=1589750995
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
